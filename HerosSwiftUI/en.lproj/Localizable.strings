@@ -5,3 +5,8 @@
   Created by Luis Quintero on 28/05/25.
   
 */
+
+"Entrar" = "Login";
+"Clave" = "Password";
+"Registro" = "Register";
+"¿No tienes cuenta?" = "Do you have an account?";
