@@ -6,11 +6,26 @@
 //
 
 import SwiftUI
+import TipKit
+
+// Gestionar Foco
+enum FocusedField {
+    case user, password
+}
 
 struct LoginView: View {
     
+    @Environment(AppStateVM.self) var appState
+    
+    // TipKit
+    private var tip = LoginTip()
+    
+    // Gestión de foco linea 77
+    @FocusState
+    private var focusedField: FocusedField?
+    
 #if DEBUG
-    @State private var email = "luisgq1975@gmail.com"
+    @State private var email = "luisgqr1975@gmail.com"
     @State  private var password = "abcdef"
 #else
     @State private var email = ""
@@ -18,6 +33,12 @@ struct LoginView: View {
 #endif
     
     @State private var animationAmount = 1.0
+    
+    // Ponerlo en el ciclo de vida, aqui no sirve
+    // En HerosSwiftUIApp
+    init() {
+        try? Tips.resetDatastore() // Resetea el número de veces visto a 0
+    }
     
     var body: some View {
         ZStack {
@@ -52,6 +73,12 @@ struct LoginView: View {
                         .autocorrectionDisabled(true) ///Desactivate autocorrection
                         .opacity(0.8)
                         .id(1) // For testing
+                    // Foco
+                        .focused($focusedField, equals: .user)
+                    // Usar onsubmit para que pase del usuario a la contraseña al pulsar submit
+                        .onSubmit {
+                            focusedField = .password
+                        }
                     
                     // Clave
                     SecureField("Clave", text: $password)
@@ -65,15 +92,23 @@ struct LoginView: View {
                         .padding(.top, 20)
                         .opacity(0.8)
                         .id(2) // For testing
+                    // Foco
+                        .focused($focusedField, equals: .password)
+                    // Usar onsubmit para que pase del usuario a la contraseña al pulsar submit
+                        .onSubmit {
+                            focusedField = .user
+                        }
                         
                     
                 }
                 .padding([.leading, .trailing], 30)
                 .padding(.top, 256)
+                // Foco  valor inicial
+                .defaultFocus($focusedField, .user)
                 
                 // Login Button
                 Button {
-                    // TODO: Action Login
+                    appState.loginApp(user: email, pass: password)
                 } label: {
                     Text("Entrar")
                         .font(.title2)
@@ -97,6 +132,18 @@ struct LoginView: View {
                 )
                 .onAppear {
                     animationAmount = 2
+                }
+                
+                // Tip
+                
+                TipView(tip, arrowEdge: .top) { action in
+                    if action.id == "help" {
+                        //Abrir ayuda
+                        print("Ayuda")
+                    } else {
+                        // Cambiar de clave
+                        print("Cambio de clave")
+                    }
                 }
                 
                 Spacer()
@@ -127,4 +174,5 @@ struct LoginView: View {
     LoginView()
         .environment(\.locale, .init(identifier: "en"))
         .preferredColorScheme(.light)
+        .environment(AppStateVM())
 }

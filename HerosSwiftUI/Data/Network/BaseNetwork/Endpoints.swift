@@ -8,6 +8,10 @@
 import Foundation
 
 enum Endpoints: String {
-     login: "/auth/login"
-     heros: "/heros/all"
+    case login = "/auth/login"
+    case heros = "/heros/all"
+    case like = "/data/herolike" // Favourite Hero
+    
+    case alumnos = "/data/developers"
+    case bootcamps = "data/bootcamps"
 }

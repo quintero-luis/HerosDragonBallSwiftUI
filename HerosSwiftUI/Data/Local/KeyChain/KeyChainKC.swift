@@ -13,10 +13,12 @@ public struct KeyChainKC {
     public init() {
     }
         
+    
         // Función para guardar
-        
         @discardableResult
         public func saveKC(key: String, value: String) -> Bool {
+            let keychain = KeychainSwift()
+            
             if let data = value.data(using: .utf8) {
                 return KeychainSwift().set(data, forKey: key)
             } else {
@@ -30,6 +32,7 @@ public struct KeyChainKC {
             if let data = KeychainSwift().get(key) {
                 return data
             } else {
+                //No existe la clave
                 return ""
             }
         }

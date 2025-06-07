@@ -27,14 +27,14 @@ final class NetworkLogin: NetworkLoginProtocol {
         // Creo la request
         var request = URLRequest(url: URL(string: urlCad)!)
         request.httpMethod = HttpMethods.post
-        request.addValue(HttpMethods.content, forHTTPHeaderField: "Content-type") /// The value of the header field
+        request.addValue(HttpMethods.content, forHTTPHeaderField: "Content-type") // The value of the header field
         request.addValue(SegCredential, forHTTPHeaderField: "Authorization")
         
         // Call to server
         do {
             let (data, response) = try await URLSession.shared.data(for: request)
             if let resp = response as? HTTPURLResponse {
-                if resp.statusCode == HttpResponseCodes.SUCCES {
+                if resp.statusCode == HttpResponseCodes.SUCCESS {
                     tokenJWT = String(decoding: data, as: UTF8.self)
                 }
             }
