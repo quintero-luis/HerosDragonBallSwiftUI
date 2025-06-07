@@ -44,20 +44,20 @@ struct LoginView: View {
         ZStack {
             // Imagen de fondo
             Image(.backgroundLogin)
-                .resizable() /// Solo para resize en safearea
+                .resizable() // Solo para resize en safearea
             // Imagen negra
-            Image(decorative: "")
+            Image(decorative: "1")
                 .resizable()
                 .background(.black)
                 .opacity(0.5)
             
             // Componentes del login
             VStack {
-                Image(.title) /// Dragon Ball Title
+                Image(.title) // Dragon Ball Title
                     .resizable()
                     .scaledToFit()
                     .opacity(0.7)
-                    .padding(.top, 180) /// Put down Título
+                    .padding(.top, 180) // Put down title
 
                 
                 // MARK: Usuario y clave

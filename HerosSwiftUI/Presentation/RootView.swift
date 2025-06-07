@@ -19,7 +19,6 @@ struct RootView: View {
             withAnimation {
                 LoaderView()
             }
-            Text("Cargando")
         case .error(error: let errorString):
             withAnimation {
                 ErrorView(error: errorString)

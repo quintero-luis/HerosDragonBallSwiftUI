@@ -37,9 +37,15 @@ struct HeroesRowView: View {
                 if let favorite = hero.favorite {
                     
                     if favorite == true {
-                        Image(systemName: "heart.cicle")
+                        Image(systemName: "heart.circle")
                             .resizable()
                             .foregroundStyle(.red)
+                            .frame(width: 40, height: 40)
+                            .padding([.leading, .bottom], 10)
+                    } else {
+                        Image(systemName: "heart.circle")
+                            .resizable()
+                            .foregroundStyle(.gray)
                             .frame(width: 40, height: 40)
                             .padding([.leading, .bottom], 10)
                     }

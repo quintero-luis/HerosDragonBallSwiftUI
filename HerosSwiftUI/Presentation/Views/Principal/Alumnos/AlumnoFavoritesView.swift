@@ -38,7 +38,7 @@ struct AlumnoFavoritesView: View {
 }
 
 #Preview {
-    AlumnoFavoritesView(data: AlumnosModel(id: UUID().uuidString, email: "l@gmail.com", apell1: "EF", apell2: "FAFA", name: "Luis", photo: "", bootcamp: BootcampModel(id: "ZZ", name: "BOOT"), heros: [
+    AlumnoFavoritesView(data: AlumnosModel(id: UUID().uuidString, email: "l@gmail.com", apell1: "EF", apell2: "FAFA", name: "Luis", photo: "https://statics.uniradioinforma.com/2023/05/64680f644935f.jpg", bootcamp: BootcampModel(id: "ZZ", name: "BOOT"), heros: [
         
         HerosModel(id: UUID(), name: "Goku", description: "Sobran las presentaciones cuando se habla de Goku. El Saiyan fue enviado al planeta Tierra, pero hay dos versiones sobre el origen del personaje. Según una publicación especial, cuando Goku nació midieron su poder y apenas llegaba a dos unidades, siendo el Saiyan más débil. Aun así se pensaba que le bastaría para conquistar el planeta. Sin embargo, la versión más popular es que Freezer era una amenaza para su planeta natal y antes de que fuera destruido, se envió a Goku en una incubadora para salvarle.", photo: "https://cdn.alfabetajuega.com/alfabetajuega/2020/12/goku1.jpg?width=300" , favorite: true),
         

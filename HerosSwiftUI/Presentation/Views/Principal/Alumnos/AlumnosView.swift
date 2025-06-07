@@ -25,12 +25,15 @@ struct AlumnosView: View {
                 // if for Empty Bootcamps
                 
                 if alumnosboot.count > 0 {
+                    
                     VStack {
                         // Title bootcamp
                         Text(bootcamp.name)
                             .font(.title2)
                             .foregroundStyle(.orange)
                             .bold()
+                        
+                        
                         // Alumnos
                         ScrollView(.horizontal, showsIndicators: false) {
                             // Lazy so we only load the ones appearing on screen

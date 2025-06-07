@@ -32,13 +32,13 @@ struct PrincipalView: View {
             }
             .tag(1)
         }
-        Button("Siguiente") {
-            if selection == 1 {
-                selection = 0
-            } else {
-                selection += 1
-            }
-        }
+//        Button("Siguiente") {
+//            if selection == 1 {
+//                selection = 0
+//            } else {
+//                selection += 1
+//            }
+//        }
     }
 }
 

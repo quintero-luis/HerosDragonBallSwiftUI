@@ -52,5 +52,5 @@ struct AlumnosRowView: View {
 }
 
 #Preview {
-    AlumnosRowView(data: AlumnosModel(id: UUID().uuidString, email: "email", apell1: "Quintero", apell2: "Ramirez", name: "Luis", photo: "", bootcamp: BootcampModel(id: "sss", name: "Prueba bootcamp"), heros: []))
+    AlumnosRowView(data: AlumnosModel(id: UUID().uuidString, email: "email", apell1: "Quintero", apell2: "Ramirez", name: "Luis", photo: "https://statics.uniradioinforma.com/2023/05/64680f644935f.jpg", bootcamp: BootcampModel(id: "sss", name: "Prueba bootcamp"), heros: []))
 }
