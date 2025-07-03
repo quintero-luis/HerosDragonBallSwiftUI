@@ -32,11 +32,12 @@ struct HerosDetailView: View {
                 
                 
             } label: {
-                Image(systemName: "heart.circle")
+                Image(systemName: "heart.fill")
                     .resizable()
                 // único caso de desempaquetado forzado
                     .foregroundStyle(hero.favorite! ? .red : .gray)
-                    .frame(width: 40, height: 40)
+                    .frame(width: 36, height: 32)
+                    .padding(.trailing, 12)
                     
             }
         } // HStack
