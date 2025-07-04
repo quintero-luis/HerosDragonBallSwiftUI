@@ -45,7 +45,7 @@ struct LoginView: View {
             // Imagen de fondo
             Image(.backgroundLogin)
                 .resizable() // Solo para resize en safearea
-            // Imagen negra
+            // Imagen negr
             Image(decorative: "1")
                 .resizable()
                 .background(.black)
