@@ -11,10 +11,6 @@ import Foundation
 
 struct HerosSwiftUITests {
 
-//    @Test func example() async throws {
-//        let bootcamp1 = BootcampModel(id: "01", name: "Bootcamp 1")
-//        #expect(bootcamp1 != nil)
-//    }
     
     @Suite("Domain Testing") struct DomainTests {
         
@@ -103,14 +99,6 @@ struct HerosSwiftUITests {
     @Suite("Data Testing", .serialized)
     struct DataTest {
         
-        @Suite("Data Local")
-        struct DataLocalTests {
-            @Test func <#test name#>() async throws {
-                // KeyChain
-                // Save, Delete, Get
-            }
-        }
-        
         @Suite("Data Network")
         struct DataNetworkTest {
             @Test func DataNetworkModelTest() async throws {
@@ -141,13 +129,6 @@ struct HerosSwiftUITests {
      2.= Añadir al proyecto SOLO target de Test
      3.= import de ViewInspector
      */
-    
-    @Suite("Presentation Testing", .serialized)
-    struct PresentationTest {
-        
-        @Test func <#test name#>() async throws {
-            <#body#>
-        }
-    }
+
 
 }
