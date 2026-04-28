@@ -1,5 +1,4 @@
 # HerosDragonBallSwiftUI
-
 Dragon Ball API application built with Swift and SwiftUI.
 
 ## Features
@@ -8,6 +7,7 @@ Dragon Ball API application built with Swift and SwiftUI.
 - Reactive UI using Swift's `@Observable` macro
 - In-app contextual guidance with TipKit
 - Unit and UI tests with XCTest
+- CI via GitHub Actions — tests run automatically on every push
 
 ## Tech Stack
 | Layer | Technology |
@@ -18,6 +18,7 @@ Dragon Ball API application built with Swift and SwiftUI.
 | Reactive | Combine |
 | Guidance | TipKit |
 | Testing | XCTest |
+| CI | GitHub Actions |
 
 ## Architecture
 MVVM — clear separation between data, business logic, and UI layers.
